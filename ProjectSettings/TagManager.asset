@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags: []
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Base_Ground
+  - God_Ground
+  - Base_Object
+  - God_Object
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Base_RT
+  - Player
+  - Mask
+  m_SortingLayers:
+  - name: Ground
+    uniqueID: 3839591249
+    locked: 0
+  - name: Mask
+    uniqueID: 957825459
+    locked: 0
+  - name: Ground Effect
+    uniqueID: 921803845
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0

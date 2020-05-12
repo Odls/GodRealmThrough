@@ -1,0 +1,7 @@
+/.vs
+/Library
+/Log
+/obj
+/Temp
+*.csproj
+/GodRealmThrough.sln
