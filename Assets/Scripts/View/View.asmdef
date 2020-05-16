@@ -1,15 +1,14 @@
 {
     "name": "View",
     "references": [
-        "GUID:492ed3409ef4dba4196463b635a5fa0f"
+        "PatternSprite"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": [],
-    "noEngineReferences": false
+    "defineConstraints": []
 }

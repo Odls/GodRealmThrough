@@ -1,6 +1,6 @@
 /.vs
 /Library
-/Log
+/Logs
 /obj
 /Temp
 *.csproj
