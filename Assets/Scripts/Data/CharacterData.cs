@@ -7,5 +7,6 @@ using UnityEngine;
 public class CharacterData : ScriptableObject{
 
 	[SerializeField] float mMoveSpeed = 1;
+	/// <summary> 基礎移動速度 </summary>
 	public float walkSpeed { get => mMoveSpeed; }
 }

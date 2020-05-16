@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : CharacterController {
-    protected override void Update(){
+	protected override void Update(){
         switch (status.state) {
         case CHARACTOR_STATE.Idle:
         case CHARACTOR_STATE.Move:
@@ -12,6 +12,12 @@ public class PlayerController : CharacterController {
             moveDirection = new Vector2(_axisX, _axisY);
             break;
         }
+
+
+		if (Input.GetButtonDown("GodRealm")) {
+			realm.isOn ^= true; // Invert, Same As [realm.isOn = !realm.isOn]
+		}
+
         base.Update();
     }
 

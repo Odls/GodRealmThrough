@@ -8,8 +8,10 @@ public class CharacterController : MonoBehaviour{
 	[SerializeField] protected CharacterData data;
 
 	[SerializeField] protected Rigidbody2D rigibody;
+	[SerializeField] protected Realm realm;
 	[SerializeField] protected CharacterView view;
 
+	#region Angle
 	private bool mHasMoveDirection = false;
 	/// <summary> 輸入方向不為零 </summary>
 	protected bool hasMoveDirection { get => mHasMoveDirection; }
@@ -19,11 +21,14 @@ public class CharacterController : MonoBehaviour{
 	protected Vector2 moveDirection {
 		get => mMoveDirection;
 		set {
-			mMoveDirection = value;
+			mMoveDirection = value.normalized;
 			mHasMoveDirection = mMoveDirection.sqrMagnitude > 0;
 		}
 	}
 
+	/// <summary> 前方角度 (徑度) </summary>
+	protected float forwardAngle { set => view.forwardAngle = value; }
+	#endregion
 
 	protected virtual void Update() {
 		CheckState();
@@ -31,7 +36,7 @@ public class CharacterController : MonoBehaviour{
 		// Rota When Has Move
 		if (hasMoveDirection) {
 			float _angle = Mathf.Atan2(moveDirection.y, moveDirection.x);
-			view.forwardAngle = _angle;
+			forwardAngle = _angle;
 		}
 
 		rigibody.velocity = moveDirection * status.nowSpeed * data.walkSpeed * Time.deltaTime;

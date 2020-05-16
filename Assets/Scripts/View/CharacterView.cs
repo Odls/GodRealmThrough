@@ -2,16 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class CharacterView : MonoBehaviour{
-	[SerializeField] PatternSprite patternSprite;
+	#region Angle
 	[SerializeField] Transform spriteTop;
 	[SerializeField] SpriteRenderer frontSprite, backSprite;
-	[SerializeField] Sprite[] patterns;
 	[SerializeField] Transform colliderTop;
-
-
-	void Awake() {
-		patternId = Random.Range(0, patterns.Length - 1);
-	}
 
 	static Vector3 rightScale = new Vector3(-1, 1, 1);
 	static Vector3 leftScale = new Vector3(1, 1, 1);
@@ -24,26 +18,27 @@ public class CharacterView : MonoBehaviour{
 			// Set Sprite Active And Scale
 			frontSprite?.gameObject.SetActive(_isForward);
 			backSprite?.gameObject.SetActive(!_isForward);
-			patternSprite.transform.localScale = (_isRight ? rightScale : leftScale);
+			spriteTop.transform.localScale = (_isRight ? rightScale : leftScale);
 
 			// Rota Collider
 			colliderTop.localRotation = Quaternion.Euler(-90f, 0f, 90 - value*Mathf.Rad2Deg);
 		}
 	}
+	#endregion
 
-	int mPatternId = -1;
-	/// <summary> 色板 ID </summary>
-	public int patternId {
-		set {
-			if ((value != mPatternId) && (value >= 0) && (value <= (patterns.Length - 1))) {
-				mPatternId = value;
-				patternSprite.ApplyPattern(patterns[mPatternId]);
-			}
-		}
+	#region pattern
+	[SerializeField] PatternSprite patternSprite;
+	/// <summary> 色板 </summary>
+	public Sprite pattern {
+		set => patternSprite.pattern = value;
+		get => patternSprite.pattern;
 	}
-	
+	#endregion
+
+	#region Animation
 	[SerializeField] Animator animator;
 	public void PlayAnimation(string p_name) {
 		animator.Play(p_name);
 	}
+	#endregion
 }

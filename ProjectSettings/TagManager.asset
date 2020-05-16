@@ -19,12 +19,12 @@ TagManager:
   - God_Object
   - 
   - 
-  - Player_SkyBody
-  - Base_SkyBody
-  - Player_GroundBody
-  - Base_GroundBody
-  - Player_Atk
-  - Base_Atk
+  - 
+  - 
+  - Player_Body
+  - Base_Body
+  - Player_Trigger
+  - Base_Trigger
   - 
   - 
   - 
