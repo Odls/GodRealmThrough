@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bd56e8688775b4090f34344d8a32a8, type: 3}
   m_Name: Flora Beast Data
   m_EditorClassIdentifier: 
+  mHp: 100
+  mAtk: 30
   mMoveSpeed: 100
+  attacks:
+  - name: BaseAttack
+    triggerAngle: 30
+    triggerNear: 0
+    triggerFar: 2

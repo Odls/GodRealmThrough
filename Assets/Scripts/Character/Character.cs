@@ -4,16 +4,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour{
-	[SerializeField] protected CharacterStatus mStatus;
-	public CharacterStatus status { get => mStatus; }
-
-	[SerializeField] Realm mRealm;
-	public Realm realm { get => mRealm; }
 
 	[SerializeField] protected CharacterData mData;
 	public CharacterData data { get => mData; }
 
 	[SerializeField] protected Rigidbody2D rigibody;
+
+	ActionTrigger[] triggers;
+	void Awake() {
+		mStatus.hp = data.hp;
+
+		triggers = GetComponentsInChildren<ActionTrigger>(true);
+		foreach (ActionTrigger _trigger in triggers) {
+			_trigger.Init(this);
+		}
+	}
+
+	#region Realm
+	[SerializeField] Realm mRealm;
+	public Realm realm { get => mRealm; }
+	public void OpenRealm() { realm.isOn = true; }
+	public void CloseRealm() { realm.isOn = false; }
+	#endregion
+
+	#region Status
+	[SerializeField] protected CharacterStatus mStatus;
+	public CharacterStatus status { get => mStatus; }
+
+	public CHARACTOR_STATE state {
+		get => mStatus.state;
+		private set => mStatus.state = value;
+	}
+
+	public float hp {
+		get => mStatus.hp;
+		private set {
+			mStatus.hp = value;
+			if(mStatus.hp < 0) {
+				Die();
+			}
+		}
+	}
+
+	float stateSpeed {
+		get => mStatus.nowSpeed;
+		set => mStatus.nowSpeed = value;
+	}
+
+	#endregion
 
 	#region View
 	[SerializeField] protected CharacterView view;
@@ -48,13 +86,13 @@ public class Character : MonoBehaviour{
 
 		#region Check Type
 		E_TRIGGER_TYPE _canTriggerMask;
-		switch (status.state) {
+		switch (state) {
 		case CHARACTOR_STATE.Jump:	// Only SkyAttack
 			_canTriggerMask = E_TRIGGER_TYPE.SkyAttack;
 			break;
-		//case CHARACTOR_STATE.Hit:   // Nothing
-		//	_canTriggerMask = E_TRIGGER_TYPE.None;
-		//	break;
+		case CHARACTOR_STATE.Die:   // Nothing
+			_canTriggerMask = E_TRIGGER_TYPE.None;
+			break;
 		default:					// Not SkyAttack
 			_canTriggerMask = ~E_TRIGGER_TYPE.SkyAttack;
 			break;
@@ -99,15 +137,28 @@ public class Character : MonoBehaviour{
 	}
 	void Hit(ActionTrigger p_trigger) {
 		view.PlayAnimation("Hit");
+		OnHit?.Invoke(p_trigger);
+		hp -= p_trigger.atk;
 	}
-	public void Attack() {
-		view.PlayAnimation("Attack");
+	public void Attack(string p_name) {
+		view.PlayAnimation(p_name);
+	}
+	void Die() {
+		view.PlayAnimation("Die");
+	}
+	void DieEnd() {
+		Destroy(gameObject);
+		OnDie?.Invoke();
 	}
 	#endregion
 
+	#region Event
+	public Action<ActionTrigger> OnHit;
+	public Action OnDie;
+	#endregion
 	protected virtual void Update() {
 		#region Idle Or Walk
-		switch (status.state) {
+		switch (state) {
 		case CHARACTOR_STATE.Idle:
 			if (hasMoveDirection) {
 				view.PlayAnimation("Walk");
@@ -129,7 +180,7 @@ public class Character : MonoBehaviour{
 		#endregion
 
 		#region Move
-		rigibody.velocity = moveDirection * status.nowSpeed * data.walkSpeed * Time.deltaTime;
+		rigibody.velocity = moveDirection * stateSpeed * data.walkSpeed * Time.deltaTime;
 		#endregion
 	}
 }

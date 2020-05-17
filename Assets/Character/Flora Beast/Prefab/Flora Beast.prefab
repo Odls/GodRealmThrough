@@ -1,18 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &5129810489865141324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268136671767384031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78c2156bb8b53e449a2fb08bcd89aeb8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 6781839961313295061}
 --- !u!1001 &747955723063839270
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -243,6 +230,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 757080bd8b3348e468be90288ed88100,
         type: 2}
+    - target: {fileID: 1947233297524597690, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947233297524597690, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.07
+      objectReference: {fileID: 0}
     - target: {fileID: 4082017699221183167, guid: 9449b8f2f14f51349bde2747810efda1,
         type: 3}
       propertyPath: frontSprites.Array.size
@@ -350,24 +347,6 @@ PrefabInstance:
       objectReference: {fileID: 8176776136487079643}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9449b8f2f14f51349bde2747810efda1, type: 3}
---- !u!1 &1268136671767384031 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5225059215274211171, guid: 9449b8f2f14f51349bde2747810efda1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6420567612100163772}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &6781839961313295061 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 506549108177830505, guid: 9449b8f2f14f51349bde2747810efda1,
-    type: 3}
-  m_PrefabInstance: {fileID: 6420567612100163772}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268136671767384031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c8186f3502b6f64f8b06eff3bf4dded, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &791130805815968620 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6044069839484238800, guid: 9449b8f2f14f51349bde2747810efda1,

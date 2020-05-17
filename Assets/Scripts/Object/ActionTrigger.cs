@@ -33,12 +33,12 @@ public class ActionTrigger : MonoBehaviour{
 	/// <summary> 強度 </summary>
 	public float powerRate { get => mPowerRate; }
 
-	//Collider2D collider;
-	//private void Awake() {
-	//	collider = GetComponent<Collider2D>();
-	//}
-	//private void OnEnable() {
-	//	collider.enabled = false;
-	//	collider.enabled = true;
-	//}
+	/// <summary> 攻擊力 </summary>
+	public float atk { get => character.data.atk * powerRate; }
+
+	Character character;
+	internal void Init(Character p_character) {
+		character = p_character;
+	}
+
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ControllerBase : MonoBehaviour{
 	[SerializeField] protected Character target;
+
 	protected virtual void Update() {
 		
 	}

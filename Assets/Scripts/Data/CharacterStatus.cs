@@ -9,6 +9,7 @@ public enum CHARACTOR_STATE {
 	Move	= 1 << 3,
 	Jump	= 1 << 4,
 	Hit		= 1 << 5,
+	Die		= 1 << 6,
 }
 
 [System.Serializable]
@@ -17,4 +18,7 @@ public struct CharacterStatus{
     public CHARACTOR_STATE state;
     /// <summary> 速度 (由動畫控制) </summary>
     public float nowSpeed;
+
+	/// <summary> 血量 </summary>
+	public float hp;
 }
