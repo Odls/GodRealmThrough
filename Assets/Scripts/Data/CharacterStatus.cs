@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Flags]
 public enum CHARACTOR_STATE {
-    Idle,
-    Attack,
-    Move,
-    Jump
+    Idle	= 1 << 1,
+    Attack	= 1 << 2,
+	Move	= 1 << 3,
+	Jump	= 1 << 4,
+	Hit		= 1 << 5,
 }
 
 [System.Serializable]

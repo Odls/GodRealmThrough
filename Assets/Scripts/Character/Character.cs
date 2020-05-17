@@ -41,9 +41,69 @@ public class Character : MonoBehaviour{
 	public float forwardAngle { set => view.forwardAngle = value; }
 	#endregion
 
+	#region Fight
+	void OnTriggerEnter2D(Collider2D p_collision) {
+		ActionTrigger _trigger = p_collision.gameObject.GetComponent<ActionTrigger>();
+		if (_trigger == null) { return; }
+
+		#region Check Type
+		E_TRIGGER_TYPE _canTriggerMask;
+		switch (status.state) {
+		case CHARACTOR_STATE.Jump:	// Only SkyAttack
+			_canTriggerMask = E_TRIGGER_TYPE.SkyAttack;
+			break;
+		//case CHARACTOR_STATE.Hit:   // Nothing
+		//	_canTriggerMask = E_TRIGGER_TYPE.None;
+		//	break;
+		default:					// Not SkyAttack
+			_canTriggerMask = ~E_TRIGGER_TYPE.SkyAttack;
+			break;
+		}
+
+		if((_trigger.type & _canTriggerMask) == E_TRIGGER_TYPE.None) {
+			return; // Can't Trigger
+		}
+		#endregion
+
+		#region Check World
+		switch (_trigger.effectWorld) {
+		case E_EFFECT_WORLD.Base:	// In God World Can't Trigger
+			if (RealmManager.IsInRealm(transform.position)) {
+				return;
+			}
+			break;
+		case E_EFFECT_WORLD.God:	// In Base World Can't Trigger
+			if (!RealmManager.IsInRealm(transform.position)) {
+				return;
+			}
+			break;
+		case E_EFFECT_WORLD.Both:	// Always Trigger
+			break;
+		default:					// Not Trigger
+			return;
+			break;
+		}
+		#endregion
+
+		#region Do Action
+		switch (_trigger.type) {
+		case E_TRIGGER_TYPE.Touch:
+
+			break;
+		case E_TRIGGER_TYPE.GroundAttack:
+		case E_TRIGGER_TYPE.SkyAttack:
+			Hit(_trigger);
+			break;
+		}
+		#endregion
+	}
+	void Hit(ActionTrigger p_trigger) {
+		view.PlayAnimation("Hit");
+	}
 	public void Attack() {
 		view.PlayAnimation("Attack");
 	}
+	#endregion
 
 	protected virtual void Update() {
 		#region Idle Or Walk

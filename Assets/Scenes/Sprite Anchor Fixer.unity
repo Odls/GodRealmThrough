@@ -1757,6 +1757,16 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f407195dca725cf41815f4ff3a4fe3d1, type: 2}
+    - target: {fileID: 7786831797839794886, guid: 39f5e99cec10c6d488812d319a04c593,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7786831799856823573, guid: 39f5e99cec10c6d488812d319a04c593,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8627689485918971993, guid: 39f5e99cec10c6d488812d319a04c593,
         type: 3}
       propertyPath: m_IsActive
