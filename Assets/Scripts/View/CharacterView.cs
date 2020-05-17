@@ -12,8 +12,12 @@ public class CharacterView : MonoBehaviour{
 	/// <summary> 前方角 (徑度) </summary>
 	public float forwardAngle {
 		set {
-			bool _isForward = (value <= 0) || (value == Mathf.PI); // Angle <0 or =180
-			bool _isRight = (Mathf.Abs(value) < Mathf.PI*0.5f); // Angle is -90~90
+			value = value % (Mathf.PI * 2);
+			if(value < 0) {
+				value += Mathf.PI * 2;
+			}
+			bool _isForward = (value >= Mathf.PI) || (value == 0); // Angle 180~360
+			bool _isRight = (value < Mathf.PI*0.5f) || (value > Mathf.PI*1.5f); // Angle is 0~90 or 270~360
 
 			// Set Sprite Active And Scale
 			foreach (SpriteRenderer _renderer in frontSprites) {

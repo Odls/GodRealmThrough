@@ -260,6 +260,32 @@ PrefabInstance:
       propertyPath: backSprites.Array.data[1]
       value: 
       objectReference: {fileID: 8176776136487079643}
+    - target: {fileID: 4085700948019424095, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300048, guid: a2d31e23f88ce9c4491e80f44d50ecdc,
+        type: 3}
+    - target: {fileID: 4085700948019424095, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085700948019424095, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085700948019424095, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4085700948019424095, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4443834b82024d4793086909ccbca5a, type: 2}
     - target: {fileID: 5225059215274211170, guid: 9449b8f2f14f51349bde2747810efda1,
         type: 3}
       propertyPath: m_LocalPosition.x

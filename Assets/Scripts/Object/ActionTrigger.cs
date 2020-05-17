@@ -18,7 +18,7 @@ public enum E_EFFECT_WORLD {
 	Both	= Base | God,
 }
 
-public class ActionTrigger : MonoBehaviour{
+public class ActionTrigger : CharacterPart {
 	[SerializeField, BitMask(typeof(E_TRIGGER_TYPE))]
 	E_TRIGGER_TYPE mType = E_TRIGGER_TYPE.GroundAttack;
 	/// <summary> 觸發類型 </summary>
@@ -36,9 +36,6 @@ public class ActionTrigger : MonoBehaviour{
 	/// <summary> 攻擊力 </summary>
 	public float atk { get => character.data.atk * powerRate; }
 
-	Character character;
-	internal void Init(Character p_character) {
-		character = p_character;
-	}
+	
 
 }

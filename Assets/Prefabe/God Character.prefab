@@ -18,6 +18,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1281966400820040700, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281966400820040700, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 1281966400820040700, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 3781841977369621631, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -325,6 +340,12 @@ PrefabInstance:
       propertyPath: patterns.Array.data[19]
       value: 
       objectReference: {fileID: 21300038, guid: a2d31e23f88ce9c4491e80f44d50ecdc,
+        type: 3}
+    - target: {fileID: 8617913393328403981, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: bulletPrefab
+      value: 
+      objectReference: {fileID: 339484299442548957, guid: 9a44beab07094b94388c5c7c48f4bc43,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00f2fbd32f7be094e9d366f1d22b9de6, type: 3}

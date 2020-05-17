@@ -10,13 +10,13 @@ public class Character : MonoBehaviour{
 
 	[SerializeField] protected Rigidbody2D rigibody;
 
-	ActionTrigger[] triggers;
+	CharacterPart[] parts;
 	void Awake() {
 		mStatus.hp = data.hp;
 
-		triggers = GetComponentsInChildren<ActionTrigger>(true);
-		foreach (ActionTrigger _trigger in triggers) {
-			_trigger.Init(this);
+		parts = GetComponentsInChildren<CharacterPart>(true);
+		foreach (CharacterPart _part in parts) {
+			_part.Init(this);
 		}
 	}
 
@@ -55,8 +55,9 @@ public class Character : MonoBehaviour{
 
 	#region View
 	[SerializeField] protected CharacterView view;
-	public void SetPattern(Sprite p_pattern) {
-		view.pattern = p_pattern;
+	public Sprite pattern {
+		set => view.pattern = value;
+		get => view.pattern;
 	}
 	#endregion
 
@@ -124,14 +125,8 @@ public class Character : MonoBehaviour{
 		#endregion
 
 		#region Do Action
-		switch (_trigger.type) {
-		case E_TRIGGER_TYPE.Touch:
-
-			break;
-		case E_TRIGGER_TYPE.GroundAttack:
-		case E_TRIGGER_TYPE.SkyAttack:
+		if ((_trigger.type & (E_TRIGGER_TYPE.GroundAttack | E_TRIGGER_TYPE.SkyAttack)) != E_TRIGGER_TYPE.None) {
 			Hit(_trigger);
-			break;
 		}
 		#endregion
 	}
@@ -142,6 +137,10 @@ public class Character : MonoBehaviour{
 	}
 	public void Attack(string p_name) {
 		view.PlayAnimation(p_name);
+	}
+	[SerializeField] Gun gun;
+	public void Shoot() {
+		gun.Shoot();
 	}
 	void Die() {
 		view.PlayAnimation("Die");

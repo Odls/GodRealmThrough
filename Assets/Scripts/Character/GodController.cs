@@ -11,7 +11,7 @@ public class GodController : ControllerBase {
 		worldObject = p_worldObject;
 
 		#region View
-		target.SetPattern(worldObject.pattern);
+		target.pattern = worldObject.pattern;
 		forwardAngle = (worldObject.isLeft ? Mathf.PI : 0) + Random.Range(Mathf.PI * -0.49f, Mathf.PI * 0.49f);
 		target.forwardAngle = forwardAngle;
 		#endregion
@@ -42,7 +42,13 @@ public class GodController : ControllerBase {
 			case CHARACTOR_STATE.Idle:
 			case CHARACTOR_STATE.Move:
 				#region Rota
-				if (_deltaAngle > Mathf.PI) { _targetAngle -= Mathf.PI * 2; } else if (_deltaAngle < -Mathf.PI) { _targetAngle += Mathf.PI * 2; }
+				if (_deltaAngle > Mathf.PI) {
+					_targetAngle -= Mathf.PI * 2;
+					_deltaAngle = _targetAngle - forwardAngle;
+				} else if (_deltaAngle < -Mathf.PI) {
+					_targetAngle += Mathf.PI * 2;
+					_deltaAngle = _targetAngle - forwardAngle;
+				}				
 				forwardAngle = Mathf.MoveTowards(forwardAngle, _targetAngle, rotaSpeed * Mathf.Deg2Rad * Time.deltaTime);
 				#endregion
 
@@ -78,11 +84,12 @@ public class GodController : ControllerBase {
 				#endregion
 				break;
 			}
-
-			target.forwardAngle = forwardAngle;
-		}
+		}		
 	}
 
+	void LateUpdate() {
+		target.forwardAngle = forwardAngle;
+	}
 	#region Event
 	void OnHit(ActionTrigger p_trigger) {
 		target.OpenRealm();

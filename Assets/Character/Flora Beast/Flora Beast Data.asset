@@ -20,3 +20,11 @@ MonoBehaviour:
     triggerAngle: 30
     triggerNear: 0
     triggerFar: 2
+  - name: DrillLine
+    triggerAngle: 10
+    triggerNear: 2
+    triggerFar: 10
+  - name: DrillRound
+    triggerAngle: 180
+    triggerNear: 0
+    triggerFar: 2.5
