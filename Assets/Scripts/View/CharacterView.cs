@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 public class CharacterView : MonoBehaviour{
-	#region Angle
 	[SerializeField] Transform spriteTop;
-	[SerializeField] SpriteRenderer frontSprite, backSprite;
+	[SerializeField] SpriteRenderer[] frontSprites, backSprites;
 	[SerializeField] Transform colliderTop;
 
+	#region Angle
 	static Vector3 rightScale = new Vector3(-1, 1, 1);
 	static Vector3 leftScale = new Vector3(1, 1, 1);
-	/// <summary> 前方角度 (徑度) </summary>
+	/// <summary> 前方角 (徑度) </summary>
 	public float forwardAngle {
 		set {
 			bool _isForward = (value <= 0) || (value == Mathf.PI); // Angle <0 or =180
 			bool _isRight = (Mathf.Abs(value) < Mathf.PI*0.5f); // Angle is -90~90
 
 			// Set Sprite Active And Scale
-			frontSprite?.gameObject.SetActive(_isForward);
-			backSprite?.gameObject.SetActive(!_isForward);
+			foreach (SpriteRenderer _renderer in frontSprites) {
+				_renderer.gameObject.SetActive(_isForward);
+			}
+			foreach (SpriteRenderer _renderer in backSprites) {
+				_renderer.gameObject.SetActive(!_isForward);
+			}
 			spriteTop.transform.localScale = (_isRight ? rightScale : leftScale);
 
 			// Rota Collider

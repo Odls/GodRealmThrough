@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum CHARACTOR_STATE {
     Idle,
-    Atack,
+    Attack,
     Move,
     Jump
 }

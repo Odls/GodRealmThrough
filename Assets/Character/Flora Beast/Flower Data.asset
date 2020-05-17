@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e696ab50712e9824c8acc11e70cc7be1, type: 3}
   m_Name: Flower Data
   m_EditorClassIdentifier: 
-  mGodPrefab: {fileID: 8883355099255536483, guid: 39f5e99cec10c6d488812d319a04c593,
+  mCharacterPrefab: {fileID: 6781839961313295061, guid: 39f5e99cec10c6d488812d319a04c593,
     type: 3}
   patterns:
   - {fileID: 21300000, guid: a2d31e23f88ce9c4491e80f44d50ecdc, type: 3}

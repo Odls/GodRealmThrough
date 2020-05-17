@@ -1,35 +1,23 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &8883355099255536483
-MonoBehaviour:
+--- !u!210 &358115094731969828
+SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7223228218769725810}
+  m_GameObject: {fileID: 8236116935177703896}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44cdb6505aa61a745ae11379e951e555, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  status:
-    state: 0
-    nowSpeed: 0
-  data: {fileID: 11400000, guid: 757080bd8b3348e468be90288ed88100, type: 2}
-  rigibody: {fileID: 3877612699873842462}
-  view: {fileID: 1448770530096952494}
---- !u!1001 &6420567612100163772
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!1001 &8477846386238265005
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 130165706568905013, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3781841977369621631, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -63,7 +51,7 @@ PrefabInstance:
     - target: {fileID: 4405787016336466382, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
       propertyPath: m_Name
-      value: Flora Beast Variant
+      value: God Character
       objectReference: {fileID: 0}
     - target: {fileID: 4405787016336466383, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
@@ -208,6 +196,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 4738991403256456822, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5548823034835504146, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
       propertyPath: patterns.Array.size
@@ -335,27 +328,9 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 00f2fbd32f7be094e9d366f1d22b9de6, type: 3}
---- !u!1 &7223228218769725810 stripped
+--- !u!1 &8236116935177703896 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 4405787016336466382, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+  m_CorrespondingSourceObject: {fileID: 570775082412476277, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
     type: 3}
-  m_PrefabInstance: {fileID: 6420567612100163772}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1448770530096952494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5548823034835504146, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
-    type: 3}
-  m_PrefabInstance: {fileID: 6420567612100163772}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7223228218769725810}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e1d2bdde5a9787428dabcbddf1077be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!50 &3877612699873842462 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 7839214498800840098, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
-    type: 3}
-  m_PrefabInstance: {fileID: 6420567612100163772}
+  m_PrefabInstance: {fileID: 8477846386238265005}
   m_PrefabAsset: {fileID: 0}

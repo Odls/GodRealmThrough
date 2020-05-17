@@ -2,35 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : CharacterController {
-	protected override void Update(){
-        switch (status.state) {
+public class PlayerController : ControllerBase {
+	protected override void Update() {
+		CharacterStatus _status = target.status;
+
+		#region Set Move Direction
+		switch (_status.state) {
         case CHARACTOR_STATE.Idle:
         case CHARACTOR_STATE.Move:
             float _axisX = Input.GetAxis("Horizontal");
             float _axisY = Input.GetAxis("Vertical");
-            moveDirection = new Vector2(_axisX, _axisY);
+			target.moveDirection = new Vector2(_axisX, _axisY);
             break;
         }
+		#endregion
 
-
+		#region On Off Realm
 		if (Input.GetButtonDown("GodRealm")) {
-			realm.isOn ^= true; // Invert, Same As [realm.isOn = !realm.isOn]
+			target.realm.isOn ^= true; // Invert, Same As [realm.isOn = !realm.isOn]
 		}
+		#endregion
 
-        base.Update();
-    }
+		#region Attack
+		if (Input.GetButtonDown("Attack")) {
+			switch (_status.state) {
+			case CHARACTOR_STATE.Idle:
+			case CHARACTOR_STATE.Move:
+				target.Attack();
+				break;
+			}
+		}
+		#endregion
 
-    protected override void CheckState() {
-        base.CheckState();
-
-        if (Input.GetButtonDown("Atack")) {
-		    switch (status.state) {
-		    case CHARACTOR_STATE.Idle:
-		    case CHARACTOR_STATE.Move:
-                view.PlayAnimation("Atack");
-                break;
-		    }
-        }
+		base.Update();
 	}
 }

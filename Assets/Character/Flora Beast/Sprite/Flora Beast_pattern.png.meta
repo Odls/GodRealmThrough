@@ -588,7 +588,7 @@ TextureImporter:
         width: 2069
         height: 400
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1640,33 +1640,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flora Beast_pattern_53
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 801
-        width: 20
-        height: 20
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dfee4d1f1e0c3f390800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flora Beast_pattern_54
       rect:
         serializedVersion: 2
-        x: 39
-        y: 799
-        width: 27
-        height: 23
+        x: 5
+        y: 796
+        width: 63
+        height: 28
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1680,33 +1660,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flora Beast_pattern_55
-      rect:
-        serializedVersion: 2
-        x: 83
-        y: 783
-        width: 35
-        height: 33
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: df42608881aca0bf0800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flora Beast_pattern_56
       rect:
         serializedVersion: 2
-        x: 144
-        y: 775
-        width: 48
-        height: 37
+        x: 81
+        y: 771
+        width: 113
+        height: 46
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1720,33 +1680,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flora Beast_pattern_57
-      rect:
-        serializedVersion: 2
-        x: 203
-        y: 805
-        width: 24
-        height: 9
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0cfa14fc9dc5cbab0800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flora Beast_pattern_58
       rect:
         serializedVersion: 2
-        x: 246
-        y: 759
-        width: 82
-        height: 62
+        x: 201
+        y: 758
+        width: 130
+        height: 65
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1760,33 +1700,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flora Beast_pattern_59
-      rect:
-        serializedVersion: 2
-        x: 341
-        y: 780
-        width: 44
-        height: 37
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0595567cab2542b30800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flora Beast_pattern_60
       rect:
         serializedVersion: 2
-        x: 394
-        y: 721
-        width: 127
-        height: 101
+        x: 340
+        y: 719
+        width: 183
+        height: 104
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1803,10 +1723,10 @@ TextureImporter:
       name: Flora Beast_pattern_61
       rect:
         serializedVersion: 2
-        x: 533
-        y: 599
-        width: 275
-        height: 221
+        x: 531
+        y: 597
+        width: 277
+        height: 224
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1823,10 +1743,10 @@ TextureImporter:
       name: Flora Beast_pattern_62
       rect:
         serializedVersion: 2
-        x: 817
-        y: 610
-        width: 263
-        height: 211
+        x: 815
+        y: 608
+        width: 265
+        height: 215
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1844,9 +1764,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1085
-        y: 635
+        y: 633
         width: 197
-        height: 187
+        height: 190
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1855,26 +1775,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 51fd1846e61385230800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flora Beast_pattern_65
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 785
-        width: 19
-        height: 9
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a206d7cf190512fc0800000000000000
       vertices: []
       indices: 
       edges: []
@@ -1900,33 +1800,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Flora Beast_pattern_67
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 568
-        width: 24
-        height: 18
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4072df7b48633b3d0800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Flora Beast_pattern_68
       rect:
         serializedVersion: 2
-        x: 51
-        y: 551
-        width: 55
-        height: 37
+        x: 46
+        y: 548
+        width: 63
+        height: 41
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1943,10 +1823,10 @@ TextureImporter:
       name: Flora Beast_pattern_69
       rect:
         serializedVersion: 2
-        x: 120
-        y: 519
-        width: 89
-        height: 69
+        x: 117
+        y: 517
+        width: 94
+        height: 72
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1963,10 +1843,10 @@ TextureImporter:
       name: Flora Beast_pattern_70
       rect:
         serializedVersion: 2
-        x: 292
-        y: 521
-        width: 58
-        height: 69
+        x: 215
+        y: 493
+        width: 137
+        height: 100
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1983,10 +1863,10 @@ TextureImporter:
       name: Flora Beast_pattern_71
       rect:
         serializedVersion: 2
-        x: 443
-        y: 493
-        width: 83
-        height: 95
+        x: 358
+        y: 425
+        width: 170
+        height: 166
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -2035,46 +1915,6 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3f58d79caeba98150800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flora Beast_pattern_75
-      rect:
-        serializedVersion: 2
-        x: 216
-        y: 495
-        width: 63
-        height: 85
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c77241bd46ffc0b20800000000000000
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Flora Beast_pattern_77
-      rect:
-        serializedVersion: 2
-        x: 361
-        y: 428
-        width: 79
-        height: 121
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f66ba5f98e9205e40800000000000000
       vertices: []
       indices: 
       edges: []

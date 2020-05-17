@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GodController : CharacterController{
+public class GodController : ControllerBase {
 	WorldObject worldObject;
 	public void Init(WorldObject p_worldObject) {
 		worldObject = p_worldObject;
-		view.pattern = worldObject.pattern;
-		forwardAngle = (worldObject.isLeft ? Mathf.PI : 0);
+		target.SetPattern(worldObject.pattern);
+		target.forwardAngle = (worldObject.isLeft ? Mathf.PI : 0) + Random.Range(Mathf.PI * -0.49f, Mathf.PI * 0.49f);
 	}
 }

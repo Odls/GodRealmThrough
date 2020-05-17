@@ -5,6 +5,7 @@ using UnityEngine;
 public class WorldObject : MonoBehaviour{
 	[SerializeField] ObjectData data;
 	[SerializeField] Transform spriteTop;
+	Character character;
 	GodController god;
 
 	private void Awake() {
@@ -15,8 +16,9 @@ public class WorldObject : MonoBehaviour{
 		isLeft = (Random.value < 0.5f);
 
 		// Create God
-		god = Instantiate(data.godPrefab, transform.position, transform.rotation, transform.parent);
-		god.Init(this);
+		character = Instantiate(data.characterPrefab, transform.position, transform.rotation, transform.parent);
+		god = character.GetComponent<GodController>();
+		god?.Init(this);
     }
 
 	#region Angle

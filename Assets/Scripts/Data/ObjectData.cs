@@ -4,9 +4,9 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "ObjectData", menuName = "Object Data")]
 public class ObjectData : ScriptableObject {
-	[SerializeField] GodController mGodPrefab;
+	[SerializeField] Character mCharacterPrefab;
 	/// <summary> 角色預製物 </summary>
-	public GodController godPrefab { get => mGodPrefab; }
+	public Character characterPrefab { get => mCharacterPrefab; }
 
 	[SerializeField] Sprite[] patterns;
 	public Sprite GetRamdomPattern() {
