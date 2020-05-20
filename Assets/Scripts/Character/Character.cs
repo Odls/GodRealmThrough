@@ -88,6 +88,9 @@ public class Character : MonoBehaviour{
 			if ((_trigger.type & E_TRIGGER_TYPE.Attack) != E_TRIGGER_TYPE.None) {
 				// Is Attack
 				Hit(_trigger);
+				if (_trigger.hitEffect != null) {
+					Instantiate(_trigger.hitEffect, p_collision.bounds.ClosestPoint(transform.position), transform.rotation);
+				}
 			}
 		}
 	}
@@ -101,6 +104,9 @@ public class Character : MonoBehaviour{
 	}
 	public void Attack(string p_name) {
 		view.PlayAnimation(p_name);
+	}
+	public void Dash() {
+		view.PlayAnimation("Dash");
 	}
 	[SerializeField] Gun gun;
 	public void Shoot() {

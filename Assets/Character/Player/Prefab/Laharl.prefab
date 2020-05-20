@@ -17,6 +17,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: RealmTop
       objectReference: {fileID: 0}
+    - target: {fileID: 657036745095274344, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
+        type: 3}
+      propertyPath: mHitEffect
+      value: 
+      objectReference: {fileID: 3507566493855428395, guid: 41bda8d1093924d46bc5b2489cf690f7,
+        type: 3}
     - target: {fileID: 1644174357753334361, guid: 00f2fbd32f7be094e9d366f1d22b9de6,
         type: 3}
       propertyPath: m_Name

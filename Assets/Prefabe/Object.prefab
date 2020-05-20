@@ -164,7 +164,9 @@ MonoBehaviour:
   rotaSpeed: 60
   stopRate: 0.01
   moveRate: 0.01
-  attackRate: 0.2
+  attackRate: 0.02
+  shoutRate: 0.02
+  hearShoutRadius: 3
 --- !u!50 &3520182837567901166
 Rigidbody2D:
   serializedVersion: 4

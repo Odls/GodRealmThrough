@@ -37,6 +37,8 @@ public class ActionTrigger : CharacterPart {
 	/// <summary> 攻擊力 </summary>
 	public float atk { get => character.data.atk * powerRate; }
 
-	
+	[SerializeField] GameObject mHitEffect;
+	/// <summary> 擊中特效 </summary>
+	public GameObject hitEffect { get => mHitEffect; }
 
 }

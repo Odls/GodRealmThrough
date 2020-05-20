@@ -180,11 +180,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.70243
       objectReference: {fileID: 0}
-    - target: {fileID: 3854106057214949868, guid: 2c7cb0a76a08d224fa0f5c80d7a40462,
-        type: 3}
-      propertyPath: attackRate
-      value: 0.02
-      objectReference: {fileID: 0}
     - target: {fileID: 7099473262531019434, guid: 2c7cb0a76a08d224fa0f5c80d7a40462,
         type: 3}
       propertyPath: m_RootOrder

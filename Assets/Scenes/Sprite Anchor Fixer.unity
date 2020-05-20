@@ -845,6 +845,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6617221694763371367, guid: d131a8fdff9be7f43bc9756c427eb1fa,
+        type: 3}
+      propertyPath: mStatus.nowSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6770503577984324351, guid: d131a8fdff9be7f43bc9756c427eb1fa,
         type: 3}
       propertyPath: m_Enabled

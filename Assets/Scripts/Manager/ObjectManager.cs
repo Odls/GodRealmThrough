@@ -47,4 +47,6 @@ public static class ObjectManager{
 
 		return true;
 	}
+
+	public static System.Action<Vector2> angryShout;
 }

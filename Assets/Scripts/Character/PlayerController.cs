@@ -39,6 +39,9 @@ public class PlayerController : ControllerBase {
 			if (Input.GetButtonDown("Action")) {
 				target.Action();
 			}
+			if (Input.GetButtonDown("Dash")) {
+				target.Dash();
+			}
 			break;
 		}
 		#endregion

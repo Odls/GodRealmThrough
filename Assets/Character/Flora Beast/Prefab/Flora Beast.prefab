@@ -371,6 +371,12 @@ PrefabInstance:
       propertyPath: spriteRenderers.Array.data[3]
       value: 
       objectReference: {fileID: 8176776136487079643}
+    - target: {fileID: 8987248816705489349, guid: 9449b8f2f14f51349bde2747810efda1,
+        type: 3}
+      propertyPath: mHitEffect
+      value: 
+      objectReference: {fileID: 3507566493855428395, guid: 41bda8d1093924d46bc5b2489cf690f7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9449b8f2f14f51349bde2747810efda1, type: 3}
 --- !u!4 &791130805815968620 stripped

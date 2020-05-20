@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GodController : ControllerBase {
-	bool angry = false;
+	bool isAngry = false;
 	float forwardAngle;
 	WorldObject worldObject;
 	public void Init(Character p_character, WorldObject p_worldObject) {
@@ -19,7 +19,13 @@ public class GodController : ControllerBase {
 		#region register Event
 		target.OnHit += OnHit;
 		target.OnDie += OnDie;
+		ObjectManager.angryShout += OnHearShout;
 		#endregion
+	}
+	private void OnDestroy() {
+		target.OnHit -= OnHit;
+		target.OnDie -= OnDie;
+		ObjectManager.angryShout -= OnHearShout;
 	}
 
 	/// <summary> 旋轉速度 (角度) </summary>
@@ -29,10 +35,14 @@ public class GodController : ControllerBase {
 	/// <summary> 停止時移動的機率 </summary>
 	[SerializeField] float moveRate = 0.01f;
 	/// <summary> 攻擊的機率 </summary>
-	[SerializeField] float attackRate = 0.2f;
+	[SerializeField] float attackRate = 0.02f;
+	/// <summary> 怒吼的機率 </summary>
+	[SerializeField] float shoutRate = 0.02f;
+	/// <summary> 聽到怒吼的距離 </summary>
+	[SerializeField] float hearShoutRadius = 3f;
 	protected override void Update() {
 		base.Update();
-		if (angry) {
+		if (isAngry && (target!= null)) {
 			Vector2 _targetRay = PlayerController.playerCharacter.transform.position - target.transform.position;
 			float _targetAngle = Mathf.Atan2(_targetRay.y, _targetRay.x);
 			float _deltaAngle = _targetAngle - forwardAngle;
@@ -51,8 +61,7 @@ public class GodController : ControllerBase {
 				}				
 				forwardAngle = Mathf.MoveTowards(forwardAngle, _targetAngle, rotaSpeed * Mathf.Deg2Rad * Time.deltaTime);
 				#endregion
-
-
+				
 				#region Move Or Idle
 				switch (target.state) {
 				case CHARACTOR_STATE.Idle:
@@ -82,6 +91,12 @@ public class GodController : ControllerBase {
 					}
 				}
 				#endregion
+
+				#region Angry Shout
+				if (Random.value <= shoutRate) {
+					ObjectManager.angryShout?.Invoke(target.transform.position);
+				}
+				#endregion
 				break;
 			}
 		}		
@@ -90,13 +105,26 @@ public class GodController : ControllerBase {
 	void LateUpdate() {
 		target.forwardAngle = forwardAngle;
 	}
+
+	void Angry() {
+		target.OpenRealm();
+		isAngry = true;
+	}
+
 	#region Event
 	void OnHit(ActionTrigger p_trigger) {
-		target.OpenRealm();
-		angry = true;
+		Angry();
 	}
 	void OnDie() {
-		Destroy(worldObject.gameObject);
+		if(worldObject!= null) {
+			worldObject.Break();
+		}
+	}
+	void OnHearShout(Vector2 p_pos) {
+		Vector2 _ray = p_pos - (Vector2)transform.position;
+		if(_ray.sqrMagnitude <= (hearShoutRadius* hearShoutRadius)) {
+			Angry();
+		}
 	}
 	#endregion
 }

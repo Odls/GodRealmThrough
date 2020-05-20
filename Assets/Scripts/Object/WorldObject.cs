@@ -44,14 +44,11 @@ public class WorldObject : MonoBehaviour{
 		}
 	}
 
-	void Hit(ActionTrigger p_trigger) {
+	internal void Hit(ActionTrigger p_trigger) {
 		hp -= p_trigger.atk;
 	}
-	void Break() {
-		mHp = 0;
-		character.Die();
-
-		foreach(DropItem _dropItem in data.drops) {
+	internal void Break() {
+		foreach (DropItem _dropItem in data.drops) {
 			for(int f=0; f< _dropItem.count; f++) {
 				DropItemView _dropItemView = Instantiate(dropItemPrefab, transform.position, transform.rotation, transform.parent);
 				_dropItemView.Pop(
@@ -61,6 +58,10 @@ public class WorldObject : MonoBehaviour{
 				);
 			}
 		}
+
+		mHp = 0;
+		character?.Die();
+		Destroy(gameObject);
 	}
 
 	#region Angle
