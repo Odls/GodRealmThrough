@@ -8,6 +8,7 @@ public enum E_TRIGGER_TYPE {
 	Touch			= 1 << 1,
 	GroundAttack	= 1 << 2,
 	SkyAttack		= 1 << 3,
+	Attack			= GroundAttack | SkyAttack,
 	All				= unchecked((int)0xFFFFFFFF),
 }
 [System.Flags]

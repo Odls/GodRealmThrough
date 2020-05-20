@@ -83,57 +83,21 @@ public class Character : MonoBehaviour{
 	#region Fight
 	void OnTriggerEnter2D(Collider2D p_collision) {
 		ActionTrigger _trigger = p_collision.gameObject.GetComponent<ActionTrigger>();
-		if (_trigger == null) { return; }
-
-		#region Check Type
-		E_TRIGGER_TYPE _canTriggerMask;
-		switch (state) {
-		case CHARACTOR_STATE.Jump:	// Only SkyAttack
-			_canTriggerMask = E_TRIGGER_TYPE.SkyAttack;
-			break;
-		case CHARACTOR_STATE.Die:   // Nothing
-			_canTriggerMask = E_TRIGGER_TYPE.None;
-			break;
-		default:					// Not SkyAttack
-			_canTriggerMask = ~E_TRIGGER_TYPE.SkyAttack;
-			break;
-		}
-
-		if((_trigger.type & _canTriggerMask) == E_TRIGGER_TYPE.None) {
-			return; // Can't Trigger
-		}
-		#endregion
-
-		#region Check World
-		switch (_trigger.effectWorld) {
-		case E_EFFECT_WORLD.Base:	// In God World Can't Trigger
-			if (RealmManager.IsInRealm(transform.position)) {
-				return;
+		
+		if(ObjectManager.TriggerIsValidInState(_trigger, state) && ObjectManager.EffectIsValidAtPos(transform.position, E_EFFECT_WORLD.God)) {
+			if ((_trigger.type & E_TRIGGER_TYPE.Attack) != E_TRIGGER_TYPE.None) {
+				// Is Attack
+				Hit(_trigger);
 			}
-			break;
-		case E_EFFECT_WORLD.God:	// In Base World Can't Trigger
-			if (!RealmManager.IsInRealm(transform.position)) {
-				return;
-			}
-			break;
-		case E_EFFECT_WORLD.Both:	// Always Trigger
-			break;
-		default:					// Not Trigger
-			return;
-			break;
 		}
-		#endregion
-
-		#region Do Action
-		if ((_trigger.type & (E_TRIGGER_TYPE.GroundAttack | E_TRIGGER_TYPE.SkyAttack)) != E_TRIGGER_TYPE.None) {
-			Hit(_trigger);
-		}
-		#endregion
 	}
 	void Hit(ActionTrigger p_trigger) {
 		view.PlayAnimation("Hit");
 		OnHit?.Invoke(p_trigger);
 		hp -= p_trigger.atk;
+	}
+	public void Action() {
+		view.PlayAnimation("Action");
 	}
 	public void Attack(string p_name) {
 		view.PlayAnimation(p_name);
@@ -142,7 +106,8 @@ public class Character : MonoBehaviour{
 	public void Shoot() {
 		gun.Shoot();
 	}
-	void Die() {
+	public void Die() {
+		mStatus.hp = 0;
 		view.PlayAnimation("Die");
 	}
 	void DieEnd() {

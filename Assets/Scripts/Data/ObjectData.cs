@@ -8,6 +8,14 @@ public class ObjectData : ScriptableObject {
 	/// <summary> 角色預製物 </summary>
 	public Character characterPrefab { get => mCharacterPrefab; }
 
+	[SerializeField] float mHp = 100;
+	/// <summary> 總血量 </summary>
+	public float hp { get => mHp; }
+
+	[SerializeField] DropItem[] mDrops;
+	/// <summary> 掉落物 </summary>
+	public DropItem[] drops { get => mDrops; }
+
 	[SerializeField] Sprite[] patterns;
 	public Sprite GetRamdomPattern() {
 		return GetPattern(Random.Range(0, patterns.Length - 1));

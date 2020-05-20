@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 720039108117101480}
   - component: {fileID: 5114405867492991068}
   - component: {fileID: 3854106057214949868}
+  - component: {fileID: 3520182837567901166}
   m_Layer: 0
   m_Name: Object
   m_TagString: Untagged
@@ -126,9 +127,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef163a72673d904e9024fb1641db85e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropItemPrefab: {fileID: 4533902118050323153, guid: 5cf9ad4e038ef2541933b50370619bef,
+    type: 3}
   data: {fileID: 0}
   spriteTop: {fileID: 991593327456485045}
   god: {fileID: 3854106057214949868}
+  mHp: 100
   patternSprite: {fileID: 5114405867492991068}
 --- !u!114 &5114405867492991068
 MonoBehaviour:
@@ -157,6 +161,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  rotaSpeed: 60
+  stopRate: 0.01
+  moveRate: 0.01
+  attackRate: 0.2
+--- !u!50 &3520182837567901166
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2608531156083594361}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
 --- !u!1 &7398600269968908434
 GameObject:
   m_ObjectHideFlags: 0

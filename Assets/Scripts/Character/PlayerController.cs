@@ -30,13 +30,16 @@ public class PlayerController : ControllerBase {
 		#endregion
 
 		#region Attack
-		if (Input.GetButtonDown("Attack")) {
-			switch (target.state) {
-			case CHARACTOR_STATE.Idle:
-			case CHARACTOR_STATE.Move:
+		switch (target.state) {
+		case CHARACTOR_STATE.Idle:
+		case CHARACTOR_STATE.Move:
+			if (Input.GetButtonDown("Attack")) {
 				target.Attack("BaseAttack");
-				break;
 			}
+			if (Input.GetButtonDown("Action")) {
+				target.Action();
+			}
+			break;
 		}
 		#endregion
 

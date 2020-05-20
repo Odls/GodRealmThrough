@@ -26,5 +26,5 @@ MonoBehaviour:
     triggerFar: 10
   - name: DrillRound
     triggerAngle: 180
-    triggerNear: 0
-    triggerFar: 2.5
+    triggerNear: 0.5
+    triggerFar: 2.2
