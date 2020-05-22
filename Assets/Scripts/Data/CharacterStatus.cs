@@ -16,8 +16,8 @@ public enum CHARACTOR_STATE {
 public struct CharacterStatus{
     /// <summary> 狀態 (由動畫控制) </summary>
     public CHARACTOR_STATE state;
-    /// <summary> 速度 (由動畫控制) </summary>
-    public float nowSpeed;
+	/// <summary> 速度倍率 (由動畫控制) </summary>
+	public float nowSpeed;
 
 	/// <summary> 血量 </summary>
 	public float hp;

@@ -12,4 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22bd56e8688775b4090f34344d8a32a8, type: 3}
   m_Name: Laharl Data
   m_EditorClassIdentifier: 
-  mMoveSpeed: 250
+  mHp: 100
+  mAtk: 30
+  mWalkSpeed: 250
+  attacks:
+  - name: Attack
+    triggerAngle: 45
+    triggerNear: 0
+    triggerFar: 2

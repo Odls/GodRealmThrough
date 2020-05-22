@@ -22,6 +22,7 @@ public class Character : MonoBehaviour{
 
 	#region Realm
 	[SerializeField] Realm mRealm;
+	/// <summary> 神界 </summary>
 	public Realm realm { get => mRealm; }
 	public void OpenRealm() { realm.isOn = true; }
 	public void CloseRealm() { realm.isOn = false; }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : ControllerBase {
 	public static Character playerCharacter { get; private set; } = null;
 	void Awake() {
+		Init(target);
 		playerCharacter = target;
 	}
 	protected override void Update() {

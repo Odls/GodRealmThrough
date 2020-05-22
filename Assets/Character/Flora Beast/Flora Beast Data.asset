@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mHp: 100
   mAtk: 30
-  mMoveSpeed: 100
+  mWalkSpeed: 100
   attacks:
   - name: BaseAttack
     triggerAngle: 30

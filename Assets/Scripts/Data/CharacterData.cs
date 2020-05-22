@@ -14,9 +14,9 @@ public class CharacterData : ScriptableObject{
 	/// <summary> 攻擊力 </summary>
 	public float atk { get => mAtk; }
 
-	[SerializeField] float mMoveSpeed = 1;
+	[SerializeField] float mWalkSpeed = 1;
 	/// <summary> 基礎移動速度 </summary>
-	public float walkSpeed { get => mMoveSpeed; }
+	public float walkSpeed { get => mWalkSpeed; }
 
 	[SerializeField] AttackData[] attacks = new AttackData[] {
 		new AttackData {

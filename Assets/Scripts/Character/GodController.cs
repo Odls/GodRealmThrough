@@ -7,7 +7,8 @@ public class GodController : ControllerBase {
 	float forwardAngle;
 	WorldObject worldObject;
 	public void Init(Character p_character, WorldObject p_worldObject) {
-		target = p_character;
+		base.Init(p_character);
+
 		worldObject = p_worldObject;
 
 		#region View
@@ -17,14 +18,12 @@ public class GodController : ControllerBase {
 		#endregion
 
 		#region register Event
-		target.OnHit += OnHit;
-		target.OnDie += OnDie;
+		
 		ObjectManager.angryShout += OnHearShout;
 		#endregion
 	}
-	private void OnDestroy() {
-		target.OnHit -= OnHit;
-		target.OnDie -= OnDie;
+	protected override void OnDestroy() {
+		base.OnDestroy();
 		ObjectManager.angryShout -= OnHearShout;
 	}
 
@@ -112,11 +111,13 @@ public class GodController : ControllerBase {
 	}
 
 	#region Event
-	void OnHit(ActionTrigger p_trigger) {
+	protected override void OnHit(ActionTrigger p_trigger) {
+		base.OnHit(p_trigger);
 		Angry();
 	}
-	void OnDie() {
-		if(worldObject!= null) {
+	protected override void OnDie() {
+		base.OnDie();
+		if(worldObject != null) {
 			worldObject.Break();
 		}
 	}
