@@ -81,7 +81,7 @@ public class Character : MonoBehaviour{
 	public float forwardAngle { set => view.forwardAngle = value; }
 	#endregion
 
-	#region Fight
+	#region Behaviour
 	void OnTriggerEnter2D(Collider2D p_collision) {
 		ActionTrigger _trigger = p_collision.gameObject.GetComponent<ActionTrigger>();
 		
@@ -108,6 +108,9 @@ public class Character : MonoBehaviour{
 	}
 	public void Dash() {
 		view.PlayAnimation("Dash");
+	}
+	public void Jump() {
+		view.PlayAnimation("Jump");
 	}
 	[SerializeField] Gun gun;
 	public void Shoot() {

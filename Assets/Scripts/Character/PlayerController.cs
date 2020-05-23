@@ -14,6 +14,7 @@ public class PlayerController : ControllerBase {
 		switch (target.state) {
         case CHARACTOR_STATE.Idle:
         case CHARACTOR_STATE.Move:
+        case CHARACTOR_STATE.Jump:
             float _axisX = Input.GetAxis("Horizontal");
             float _axisY = Input.GetAxis("Vertical");
 			target.moveDirection = new Vector2(_axisX, _axisY);
@@ -30,7 +31,7 @@ public class PlayerController : ControllerBase {
 		}
 		#endregion
 
-		#region Attack
+		#region Behaviour
 		switch (target.state) {
 		case CHARACTOR_STATE.Idle:
 		case CHARACTOR_STATE.Move:
@@ -42,6 +43,9 @@ public class PlayerController : ControllerBase {
 			}
 			if (Input.GetButtonDown("Dash")) {
 				target.Dash();
+			}
+			if (Input.GetButtonDown("Jump")) {
+				target.Jump();
 			}
 			break;
 		}
